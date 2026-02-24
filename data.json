@@ -3,7 +3,7 @@
     "targets": [
         {
             "id": "1",
-            "image": "images/target1.jpg",
+            "image": "images/target1.png",
             "message": "Привет! Это тестовое сообщение ❤️"
         }
     ]
