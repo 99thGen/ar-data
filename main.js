@@ -57,12 +57,27 @@ import * as THREE from 'three';
       const texture = await textureLoader.load("https://99thgen.github.io/ar-data/assets/overlay.png");
       console.log("Overlay загружен");
 
-      const geometry = new THREE.PlaneGeometry(1, 1);
-      const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+      // --- ИСПРАВЛЕНИЕ ПРОПОРЦИЙ И ЦВЕТА ---
+      // Получаем реальные размеры изображения (1080×1920)
+      const imageWidth = texture.image.width;
+      const imageHeight = texture.image.height;
+      const aspect = imageWidth / imageHeight; // ≈ 0.5625
+
+      // Создаём геометрию с правильными пропорциями: ширина = 1, высота = 1 / aspect
+      const geometry = new THREE.PlaneGeometry(1, 1 / aspect);
+
+      // Настраиваем материал для сохранения исходных цветов
+      const material = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        toneMapped: false,          // Отключаем тональную коррекцию (чтобы цвета не светлели)
+        colorSpace: THREE.SRGBColorSpace // Правильное цветовое пространство для sRGB
+      });
+
       const plane = new THREE.Mesh(geometry, material);
       plane.position.set(0, 0, 0);
       anchor.group.add(plane);
-      console.log("Плоскость добавлена в anchor");
+      console.log("Плоскость добавлена в anchor с пропорциями", aspect);
 
       console.log("Запускаем mindarThree.start()...");
       await mindarThree.start();
