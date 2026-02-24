@@ -1,4 +1,5 @@
-// main.js — исправленная версия без DOMContentLoaded
+import * as THREE from 'three';
+
 (function() {
   console.log("main.js: начало выполнения");
 
@@ -51,6 +52,7 @@
       const anchor = mindarThree.addAnchor(0);
       console.log("Anchor добавлен");
 
+      // Используем THREE из импорта
       const textureLoader = new THREE.TextureLoader();
       const texture = await textureLoader.load("https://99thgen.github.io/ar-data/assets/overlay.png");
       console.log("Overlay загружен");
