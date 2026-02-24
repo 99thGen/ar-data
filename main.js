@@ -1,6 +1,7 @@
-// main.js (усиленная отладка)
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("main.js: DOM готов");
+// main.js — исправленная версия без DOMContentLoaded
+(function() {
+  console.log("main.js: начало выполнения");
+
   const startButton = document.getElementById("startButton");
   const loadingScreen = document.getElementById("loading");
   const errorDiv = document.getElementById("error-message");
@@ -14,9 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (!startButton) {
-    showError("Кнопка Start не найдена");
+    showError("Кнопка Start не найдена. Возможно, страница ещё не загрузилась.");
     return;
   }
+
+  console.log("main.js: кнопка найдена, навешиваем обработчик");
 
   startButton.addEventListener("click", async () => {
     console.log("Клик по кнопке Start");
@@ -30,16 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!container) throw new Error("Контейнер AR не найден");
       console.log("Контейнер найден");
 
-      // Проверка наличия MindARThree
       if (!window.MINDAR?.IMAGE?.MindARThree) {
         throw new Error("MindARThree не загружен (проверь import map)");
       }
       console.log("MindARThree доступен");
 
       const MindARThree = window.MINDAR.IMAGE.MindARThree;
-
-      // Проверка доступности .mind файла (опционально)
-      console.log("Загружаем .mind файл:", "https://99thgen.github.io/ar-data/targets/target1.mind");
 
       const mindarThree = new MindARThree({
         container: container,
@@ -49,13 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("MindARThree экземпляр создан");
 
       const { renderer, scene, camera } = mindarThree;
-      console.log("Получены renderer, scene, camera");
-
       const anchor = mindarThree.addAnchor(0);
       console.log("Anchor добавлен");
 
-      // Загрузка оверлея
-      console.log("Загружаем overlay.png...");
       const textureLoader = new THREE.TextureLoader();
       const texture = await textureLoader.load("https://99thgen.github.io/ar-data/assets/overlay.png");
       console.log("Overlay загружен");
@@ -67,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
       anchor.group.add(plane);
       console.log("Плоскость добавлена в anchor");
 
-      // Запуск
       console.log("Запускаем mindarThree.start()...");
       await mindarThree.start();
       console.log("start() выполнен успешно");
@@ -80,9 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       showError(error.message);
       console.error("Полная ошибка:", error);
-      // Возвращаем кнопку на случай ошибки
       startButton.style.display = "block";
       if (loadingScreen) loadingScreen.style.display = "flex";
     }
   });
-});
+
+  console.log("main.js: обработчик навешен, ждём клика");
+})();
