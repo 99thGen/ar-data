@@ -52,26 +52,32 @@ import * as THREE from 'three';
       const anchor = mindarThree.addAnchor(0);
       console.log("Anchor добавлен");
 
-      // Используем THREE из импорта
-      const textureLoader = new THREE.TextureLoader();
-      const texture = await textureLoader.load("https://99thgen.github.io/ar-data/assets/overlay.png");
-      console.log("Overlay загружен");
+      // --- НАДЁЖНАЯ ЗАГРУЗКА ИЗОБРАЖЕНИЯ ---
+      // Загружаем изображение через Image, чтобы точно получить размеры
+      const img = new Image();
+      img.crossOrigin = "Anonymous";
+      await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = () => reject(new Error("Не удалось загрузить overlay.png"));
+        img.src = "https://99thgen.github.io/ar-data/assets/overlay.png";
+      });
+      console.log("Изображение загружено, размеры:", img.width, img.height);
 
-      // --- ИСПРАВЛЕНИЕ ПРОПОРЦИЙ И ЦВЕТА ---
-      // Получаем реальные размеры изображения (1080×1920)
-      const imageWidth = texture.image.width;
-      const imageHeight = texture.image.height;
-      const aspect = imageWidth / imageHeight; // ≈ 0.5625
+      // Создаём текстуру из изображения
+      const texture = new THREE.CanvasTexture(img);
+      texture.colorSpace = THREE.SRGBColorSpace; // правильное цветовое пространство
 
-      // Создаём геометрию с правильными пропорциями: ширина = 1, высота = 1 / aspect
+      // Вычисляем пропорции
+      const aspect = img.width / img.height;
+
+      // Создаём геометрию с правильными пропорциями
       const geometry = new THREE.PlaneGeometry(1, 1 / aspect);
 
-      // Настраиваем материал для сохранения исходных цветов
+      // Настраиваем материал
       const material = new THREE.MeshBasicMaterial({
         map: texture,
         transparent: true,
-        toneMapped: false,          // Отключаем тональную коррекцию (чтобы цвета не светлели)
-        colorSpace: THREE.SRGBColorSpace // Правильное цветовое пространство для sRGB
+        toneMapped: false,
       });
 
       const plane = new THREE.Mesh(geometry, material);
