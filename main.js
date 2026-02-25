@@ -41,19 +41,24 @@ import * as THREE from 'three';
 
       const MindARThree = window.MINDAR.IMAGE.MindARThree;
 
+      // ========== НАСТРОЙКИ СТАБИЛЬНОСТИ ==========
+      // Параметры, которые убирают дрожание (jitter) и делают оверлей плавным
       const mindarThree = new MindARThree({
         container: container,
         imageTargetSrc: "https://99thgen.github.io/ar-data/targets/target1.mind",
         maxTrack: 1,
+        filterMinCF: 0.0002,   // Сильное сглаживание (убирает дрожание)
+        filterBeta: 400,       // Умеренная скорость реакции (баланс)
+        warmupTolerance: 10,   // Уверенное обнаружение цели
+        missTolerance: 8       // Оверлей не моргает при кратковременной потере
       });
-      console.log("MindARThree экземпляр создан");
+      console.log("MindARThree экземпляр создан с настройками стабильности");
 
       const { renderer, scene, camera } = mindarThree;
       const anchor = mindarThree.addAnchor(0);
       console.log("Anchor добавлен");
 
-      // --- НАДЁЖНАЯ ЗАГРУЗКА ИЗОБРАЖЕНИЯ ---
-      // Загружаем изображение через Image, чтобы точно получить размеры
+      // Загрузка оверлея
       const img = new Image();
       img.crossOrigin = "Anonymous";
       await new Promise((resolve, reject) => {
@@ -63,23 +68,16 @@ import * as THREE from 'three';
       });
       console.log("Изображение загружено, размеры:", img.width, img.height);
 
-      // Создаём текстуру из изображения
       const texture = new THREE.CanvasTexture(img);
-      texture.colorSpace = THREE.SRGBColorSpace; // правильное цветовое пространство
+      texture.colorSpace = THREE.SRGBColorSpace;
 
-      // Вычисляем пропорции
       const aspect = img.width / img.height;
-
-      // Создаём геометрию с правильными пропорциями
       const geometry = new THREE.PlaneGeometry(1, 1 / aspect);
-
-      // Настраиваем материал
       const material = new THREE.MeshBasicMaterial({
         map: texture,
         transparent: true,
         toneMapped: false,
       });
-
       const plane = new THREE.Mesh(geometry, material);
       plane.position.set(0, 0, 0);
       anchor.group.add(plane);
