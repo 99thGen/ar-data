@@ -34,6 +34,28 @@ import * as THREE from 'three';
       if (!container) throw new Error("Контейнер AR не найден");
       console.log("Контейнер найден");
 
+      // --- Получаем id из URL ---
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetId = urlParams.get('id') || '1'; // по умолчанию 1
+      console.log("Запрошена точка с id:", targetId);
+
+      // --- Загружаем data.json ---
+      const dataUrl = "https://99thgen.github.io/ar-data/data.json?" + Date.now(); // антикеш
+      const response = await fetch(dataUrl);
+      if (!response.ok) throw new Error("Не удалось загрузить data.json");
+      const data = await response.json();
+      console.log("data.json загружен");
+
+      // --- Ищем нужную цель ---
+      const targetInfo = data.targets.find(t => t.id == targetId);
+      if (!targetInfo) throw new Error(`Точка с id ${targetId} не найдена`);
+
+      const mindUrl = "https://99thgen.github.io/ar-data/" + targetInfo.mind;
+      const overlayUrl = "https://99thgen.github.io/ar-data/" + targetInfo.image;
+      console.log("mind файл:", mindUrl);
+      console.log("overlay файл:", overlayUrl);
+
+      // --- Проверяем наличие MindAR ---
       if (!window.MINDAR?.IMAGE?.MindARThree) {
         throw new Error("MindARThree не загружен (проверь import map)");
       }
@@ -42,15 +64,14 @@ import * as THREE from 'three';
       const MindARThree = window.MINDAR.IMAGE.MindARThree;
 
       // ========== НАСТРОЙКИ СТАБИЛЬНОСТИ ==========
-      // Параметры, которые убирают дрожание (jitter) и делают оверлей плавным
       const mindarThree = new MindARThree({
         container: container,
-        imageTargetSrc: "https://99thgen.github.io/ar-data/targets/target1.mind",
+        imageTargetSrc: mindUrl,
         maxTrack: 1,
-        filterMinCF: 0.0002,   // Сильное сглаживание (убирает дрожание)
-        filterBeta: 400,       // Умеренная скорость реакции (баланс)
-        warmupTolerance: 10,   // Уверенное обнаружение цели
-        missTolerance: 8       // Оверлей не моргает при кратковременной потере
+        filterMinCF: 0.0002,
+        filterBeta: 400,
+        warmupTolerance: 10,
+        missTolerance: 8
       });
       console.log("MindARThree экземпляр создан с настройками стабильности");
 
@@ -58,15 +79,15 @@ import * as THREE from 'three';
       const anchor = mindarThree.addAnchor(0);
       console.log("Anchor добавлен");
 
-      // Загрузка оверлея
+      // --- Загружаем оверлей ---
       const img = new Image();
       img.crossOrigin = "Anonymous";
       await new Promise((resolve, reject) => {
         img.onload = resolve;
-        img.onerror = () => reject(new Error("Не удалось загрузить overlay.png"));
-        img.src = "https://99thgen.github.io/ar-data/assets/overlay.png";
+        img.onerror = () => reject(new Error("Не удалось загрузить оверлей"));
+        img.src = overlayUrl;
       });
-      console.log("Изображение загружено, размеры:", img.width, img.height);
+      console.log("Оверлей загружен, размеры:", img.width, img.height);
 
       const texture = new THREE.CanvasTexture(img);
       texture.colorSpace = THREE.SRGBColorSpace;
