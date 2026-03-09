@@ -1,0 +1,14 @@
+{
+    "targets": [
+        {
+            "id": "1",
+            "image": "assets/overlay.png",
+            "mind": "targets/target1.mind"
+        },
+        {
+            "id": "2",
+            "image": "assets/overlay.png",
+            "mind": "targets/target2.mind"
+        }
+    ]
+}
