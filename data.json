@@ -9,6 +9,41 @@
             "id": "2",
             "image": "assets/overlay.png",
             "mind": "targets/target2.mind"
+        },
+        {
+            "id": "3",
+            "image": "assets/overlay.png",
+            "mind": "targets/target3.mind"
+        },
+        {
+            "id": "4",
+            "image": "assets/overlay.png",
+            "mind": "targets/target4.mind"
+        },
+        {
+            "id": "5",
+            "image": "assets/overlay.png",
+            "mind": "targets/target5.mind"
+        },
+        {
+            "id": "6",
+            "image": "assets/overlay.png",
+            "mind": "targets/target6.mind"
+        },
+        {
+            "id": "7",
+            "image": "assets/overlay.png",
+            "mind": "targets/target7.mind"
+        },
+        {
+            "id": "8",
+            "image": "assets/overlay.png",
+            "mind": "targets/target8.mind"
+        },
+        {
+            "id": "9",
+            "image": "assets/overlay.png",
+            "mind": "targets/target9.mind"
         }
     ]
 }
