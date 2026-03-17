@@ -44,6 +44,11 @@
             "id": "9",
             "image": "assets/overlay9.png",
             "mind": "targets/target9.mind"
+        },
+        {
+            "id": "10",
+            "image": "assets/overlay6.png",
+            "mind": "targets/target10.mind"
         }
     ]
 }
