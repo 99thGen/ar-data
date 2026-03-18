@@ -49,6 +49,16 @@
             "id": "10",
             "image": "assets/overlay6.png",
             "mind": "targets/target10.mind"
+        },
+        {
+            "id": "11",
+            "image": "assets/overlay6.png",
+            "mind": "targets/target11.mind"
+        },
+        {
+            "id": "12",
+            "image": "assets/overlay6.png",
+            "mind": "targets/target12.mind"
         }
     ]
 }
