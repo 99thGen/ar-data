@@ -47,18 +47,38 @@
         },
         {
             "id": "10",
-            "image": "assets/overlay6.png",
+            "image": "assets/overlay10.png",
             "mind": "targets/target10.mind"
         },
         {
             "id": "11",
-            "image": "assets/overlay6.png",
+            "image": "assets/overlay11.png",
             "mind": "targets/target11.mind"
         },
         {
             "id": "12",
-            "image": "assets/overlay6.png",
+            "image": "assets/overlay12.png",
             "mind": "targets/target12.mind"
+        },
+        {
+            "id": "13",
+            "image": "assets/overlay13.png",
+            "mind": "targets/target13.mind"
+        },
+        {
+            "id": "14",
+            "image": "assets/overlay14.png",
+            "mind": "targets/target14.mind"
+        },
+        {
+            "id": "15",
+            "image": "assets/overlay15.png",
+            "mind": "targets/target15.mind"
+        },
+        {
+            "id": "16",
+            "image": "assets/overlay16.png",
+            "mind": "targets/target16.mind"
         }
     ]
 }
