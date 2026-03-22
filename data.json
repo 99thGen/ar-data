@@ -84,6 +84,76 @@
             "id": "17",
             "image": "assets/overlay17.png",
             "mind": "targets/target17.mind"
+        },
+        {
+            "id": "18",
+            "image": "assets/overlay18.png",
+            "mind": "targets/target18.mind"
+        },
+        {
+            "id": "19",
+            "image": "assets/overlay19.png",
+            "mind": "targets/target19.mind"
+        },
+        {
+            "id": "20",
+            "image": "assets/overlay20.png",
+            "mind": "targets/target20.mind"
+        },
+        {
+            "id": "21",
+            "image": "assets/overlay21.png",
+            "mind": "targets/target21.mind"
+        },
+        {
+            "id": "22",
+            "image": "assets/overlay22.png",
+            "mind": "targets/target22.mind"
+        },
+        {
+            "id": "23",
+            "image": "assets/overlay23.png",
+            "mind": "targets/target23.mind"
+        },
+        {
+            "id": "24",
+            "image": "assets/overlay24.png",
+            "mind": "targets/target24.mind"
+        },
+        {
+            "id": "25",
+            "image": "assets/overlay25.png",
+            "mind": "targets/target25.mind"
+        },
+        {
+            "id": "26",
+            "image": "assets/overlay26.png",
+            "mind": "targets/target26.mind"
+        },
+        {
+            "id": "27",
+            "image": "assets/overlay27.png",
+            "mind": "targets/target27.mind"
+        },
+        {
+            "id": "28",
+            "image": "assets/overlay28.png",
+            "mind": "targets/target28.mind"
+        },
+        {
+            "id": "29",
+            "image": "assets/overlay29.png",
+            "mind": "targets/target29.mind"
+        },
+        {
+            "id": "30",
+            "image": "assets/overlay30.png",
+            "mind": "targets/target30.mind"
+        },
+        {
+            "id": "31",
+            "image": "assets/overlay31.png",
+            "mind": "targets/target31.mind"
         }
     ]
 }
