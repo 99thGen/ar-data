@@ -156,6 +156,11 @@
             "mind": "targets/target31.mind"
         },
         {
+            "id": "32",
+            "image": "assets/overlay32.png",
+            "mind": "targets/target32.mind"
+        },
+        {
             "id": "45",
             "image": "assets/overlay45.png",
             "mind": "targets/target45.mind"
