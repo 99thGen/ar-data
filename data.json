@@ -154,6 +154,11 @@
             "id": "31",
             "image": "assets/overlay31.png",
             "mind": "targets/target31.mind"
+        },
+        {
+            "id": "45",
+            "image": "assets/overlay45.png",
+            "mind": "targets/target45.mind"
         }
     ]
 }
