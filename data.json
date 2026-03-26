@@ -161,6 +161,66 @@
             "mind": "targets/target32.mind"
         },
         {
+            "id": "33",
+            "image": "assets/overlay33.png",
+            "mind": "targets/target33.mind"
+        },
+        {
+            "id": "34",
+            "image": "assets/overlay34.png",
+            "mind": "targets/target34.mind"
+        },
+        {
+            "id": "35",
+            "image": "assets/overlay35.png",
+            "mind": "targets/target35.mind"
+        },
+        {
+            "id": "36",
+            "image": "assets/overlay36.png",
+            "mind": "targets/target36.mind"
+        },
+        {
+            "id": "37",
+            "image": "assets/overlay37.png",
+            "mind": "targets/target37.mind"
+        },
+        {
+            "id": "38",
+            "image": "assets/overlay38.png",
+            "mind": "targets/target38.mind"
+        },
+        {
+            "id": "39",
+            "image": "assets/overlay39.png",
+            "mind": "targets/target39.mind"
+        },
+        {
+            "id": "40",
+            "image": "assets/overlay40.png",
+            "mind": "targets/target40.mind"
+        },
+        {
+            "id": "41",
+            "image": "assets/overlay41.png",
+            "mind": "targets/target41.mind"
+        },
+        {
+            "id": "42",
+            "image": "assets/overlay42.png",
+            "mind": "targets/target42.mind"
+        },
+        {
+            "id": "43",
+            "image": "assets/overlay43.png",
+            "mind": "targets/target43.mind"
+        },
+        {
+            "id": "44",
+            "image": "assets/overlay44.png",
+            "mind": "targets/target44.mind"
+        },
+        {
             "id": "45",
             "image": "assets/overlay45.png",
             "mind": "targets/target45.mind"
