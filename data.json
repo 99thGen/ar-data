@@ -225,5 +225,85 @@
             "image": "assets/overlay45.png",
             "mind": "targets/target45.mind"
         }
+        {
+            "id": "46",
+            "image": "assets/overlay46.png",
+            "mind": "targets/target46.mind"
+        },
+        {
+            "id": "47",
+            "image": "assets/overlay47.png",
+            "mind": "targets/target47.mind"
+        },
+        {
+            "id": "48",
+            "image": "assets/overlay48.png",
+            "mind": "targets/target48.mind"
+        },
+        {
+            "id": "49",
+            "image": "assets/overlay49.png",
+            "mind": "targets/target49.mind"
+        },
+        {
+            "id": "50",
+            "image": "assets/overlay50.png",
+            "mind": "targets/target50.mind"
+        },
+        {
+            "id": "51",
+            "image": "assets/overlay51.png",
+            "mind": "targets/target51.mind"
+        },
+        {
+            "id": "52",
+            "image": "assets/overlay52.png",
+            "mind": "targets/target52.mind"
+        },
+        {
+            "id": "53",
+            "image": "assets/overlay53.png",
+            "mind": "targets/target53.mind"
+        },
+        {
+            "id": "54",
+            "image": "assets/overlay54.png",
+            "mind": "targets/target54.mind"
+        },
+        {
+            "id": "55",
+            "image": "assets/overlay55.png",
+            "mind": "targets/target55.mind"
+        },
+        {
+            "id": "56",
+            "image": "assets/overlay56.png",
+            "mind": "targets/target56.mind"
+        },
+        {
+            "id": "57",
+            "image": "assets/overlay57.png",
+            "mind": "targets/target57.mind"
+        },
+        {
+            "id": "58",
+            "image": "assets/overlay58.png",
+            "mind": "targets/target58.mind"
+        },
+        {
+            "id": "59",
+            "image": "assets/overlay59.png",
+            "mind": "targets/target59.mind"
+        },
+        {
+            "id": "60",
+            "image": "assets/overlay60.png",
+            "mind": "targets/target60.mind"
+        },
+        {
+            "id": "61",
+            "image": "assets/overlay61.png",
+            "mind": "targets/target61.mind"
+        }
     ]
 }
