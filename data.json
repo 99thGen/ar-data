@@ -689,6 +689,26 @@
             "id": "138",
             "image": "assets/overlay138.png",
             "mind": "targets/target138.mind"
+        },
+        {
+            "id": "139",
+            "image": "assets/overlay139.png",
+            "mind": "targets/target139.mind"
+        },
+        {
+            "id": "140",
+            "image": "assets/overlay140.png",
+            "mind": "targets/target140.mind"
+        },
+        {
+            "id": "141",
+            "image": "assets/overlay141.png",
+            "mind": "targets/target141.mind"
+        },
+        {
+            "id": "142",
+            "image": "assets/overlay142.png",
+            "mind": "targets/target142.mind"
         }
     ]
 }
