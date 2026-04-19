@@ -764,6 +764,66 @@
             "id": "153",
             "image": "assets/overlay153.png",
             "mind": "targets/target153.mind"
+        },
+        {
+            "id": "154",
+            "image": "assets/overlay154.png",
+            "mind": "targets/target154.mind"
+        },
+        {
+            "id": "155",
+            "image": "assets/overlay155.png",
+            "mind": "targets/target155.mind"
+        },
+        {
+            "id": "156",
+            "image": "assets/overlay156.png",
+            "mind": "targets/target156.mind"
+        },
+        {
+            "id": "157",
+            "image": "assets/overlay157.png",
+            "mind": "targets/target157.mind"
+        },
+        {
+            "id": "158",
+            "image": "assets/overlay158.png",
+            "mind": "targets/target158.mind"
+        },
+        {
+            "id": "159",
+            "image": "assets/overlay159.png",
+            "mind": "targets/target159.mind"
+        },
+        {
+            "id": "160",
+            "image": "assets/overlay160.png",
+            "mind": "targets/target160.mind"
+        },
+        {
+            "id": "161",
+            "image": "assets/overlay161.png",
+            "mind": "targets/target161.mind"
+        },
+        {
+            "id": "162",
+            "image": "assets/overlay162.png",
+            "mind": "targets/target162.mind"
+        },
+        {
+            "id": "163",
+            "image": "assets/overlay163.png",
+            "mind": "targets/target163.mind"
+        },
+        {
+            "id": "164",
+            "image": "assets/overlay164.png",
+            "mind": "targets/target164.mind"
+        },
+        {
+            "id": "165",
+            "image": "assets/overlay165.png",
+            "mind": "targets/target165.mind"
         }
     ]
 }
