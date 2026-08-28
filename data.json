@@ -1069,6 +1069,16 @@
             "id": "214",
             "image": "assets/overlay214.png",
             "mind": "targets/target214.mind"
+        },
+        {
+            "id": "215",
+            "image": "assets/overlay215.png",
+            "mind": "targets/target215.mind"
+        },
+        {
+            "id": "216",
+            "image": "assets/overlay216.png",
+            "mind": "targets/target216.mind"
         }
     ]
 }
